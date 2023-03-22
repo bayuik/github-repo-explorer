@@ -11,13 +11,10 @@ interface UserListProps {
   login: string;
 }
 
-// get_user_repo("taftphir");
-// name
-// description
-// stargazers_count
 interface Repo {
   name: string;
   description: string;
+  stargazers_count: number;
 }
 
 function UserList({ login }: UserListProps) {
@@ -26,7 +23,6 @@ function UserList({ login }: UserListProps) {
   useEffect(() => {
     get_user_repo(login).then((data: any) => {
       setRepoList(data);
-      // console.log(data);
     });
   }, []);
 
@@ -47,6 +43,7 @@ function UserList({ login }: UserListProps) {
                 <RepoCard
                   name={repo.name}
                   description={repo.description}
+                  stargazers_count={repo.stargazers_count}
                   key={repo.name}
                 />
               );

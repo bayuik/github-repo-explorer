@@ -25,8 +25,7 @@ const get_user_repo = async (username: string) => {
     })
     .then((response) => response.data)
     .catch((error) => alert(error.message));
-    // console.log(data);
-    
+
   return data;
 };
 
