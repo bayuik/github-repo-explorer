@@ -4,15 +4,21 @@ Github Repo Explorer is a web application that allows users to search for Github
 ## Getting Started
 Github Repo Explorer is a web application that allows users to search for Github repositories and view their details. The application is built using React.js and Github API.
 
-``git clone https://github.com/yourusername/github-repo-explorer.git``
+```
+git clone https://github.com/yourusername/github-repo-explorer.git
+```
 
 After cloning the repository, navigate to the project directory and install the project dependencies by running the following command:
 
-``npm install``
+```
+npm instal
+```
 
 Once the dependencies are installed, you can start the application by running the following command:
 
-``npm start``
+```
+npm start
+```
 
 This will start the development server and open the application in your default browser at http://localhost:3000/.
 
