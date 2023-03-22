@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux/es/exports";
 import { get_data_user } from "../utils/api";
+import { setListUser } from "../States/userSlice";
 
 function Form() {
   const [user, setUser] = useState("");
@@ -12,9 +13,11 @@ function Form() {
     setUser(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    get_data_user(user);
+    get_data_user(user).then((data) => {
+      dispatch(setListUser(data));
+    });
   };
 
   return (

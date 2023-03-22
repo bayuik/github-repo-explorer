@@ -13,7 +13,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setListUser: (state, action) => {
-      state.listUser = action.payload.listUser;
+      state.listUser = action.payload;
     },
     setListUserEmpty: (state) => {
       state.listUser = [];
@@ -25,6 +25,7 @@ type UserActions = typeof userSlice.actions;
 type UserCaseReducerActions = CaseReducerActions<UserActions, "user">;
 
 const userReducer = userSlice.reducer;
+const setListUser = userSlice.actions.setListUser;
 
-export { userReducer };
+export { userReducer, setListUser };
 export type { UserActions, UserCaseReducerActions };

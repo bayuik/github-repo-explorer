@@ -1,16 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Form from "./Components/Form";
 import UserList from "./Components/UserList";
 import "./App.css";
 import Container from "@mui/material/Container";
-import { get_data_user } from "./utils/api";
+import { useSelector } from "react-redux";
 
 function App() {
+  const [user, setUser] = useState([]);
+  const { listUser } = useSelector((state: any) => state.user);
+
+  useEffect(() => {
+    setUser(listUser);
+  }, [listUser]);
   return (
     <div className="App">
       <Container maxWidth="md" className="app_container">
         <Form />
-        <UserList />
+        {user &&
+          user.map((user: any) => {
+            return <UserList login={user.login} key={user.login} />;
+          })}
       </Container>
     </div>
   );

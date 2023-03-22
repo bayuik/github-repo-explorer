@@ -1,26 +1,20 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
+interface RepoCardProps {
+  name: string;
+  description: string;
+}
 
-export default function RepoCard() {
+export default function RepoCard({ name, description }: RepoCardProps) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} className="card_container">
       <CardContent>
         <Typography variant="h5" component="div">
-          Title
+          {name}
         </Typography>
-        <Typography variant="body2">well meaning and kindly.</Typography>
+        <Typography variant="body2">{description}</Typography>
       </CardContent>
     </Card>
   );
